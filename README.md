@@ -1,6 +1,4 @@
 
-![AWS Thema Project Diagram](./AWS-thema-Project.png)
-
 # 🌐 AWS Blog Web Page Infrastructure 🚀
 
 ## 📖 Project Description
@@ -59,4 +57,3 @@ To deploy this project, you need the following:
 ---
 
 💡 **Note**: Ensure that you have the necessary **IAM roles and permissions** configured before deployment!
-
