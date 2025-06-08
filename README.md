@@ -1,3 +1,6 @@
+
+![AWS Thema Project Diagram](./AWS-thema-Project.png)
+
 # 🌐 AWS Blog Web Page Infrastructure 🚀
 
 ## 📖 Project Description
