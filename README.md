@@ -1,59 +1,92 @@
+<<<<<<< HEAD
+
+![AWS Thema Project Diagram](./AWS-thema-Project.png)
 
 # 🌐 AWS Blog Web Page Infrastructure 🚀
+=======
+>>>>>>> fadb154 (update Project files)
 
-## 📖 Project Description
+![AWS Project Architecture](AWS-thema-Project.png)
 
-This project is designed to create a scalable, secure, and highly available blog web page infrastructure on AWS. It integrates multiple AWS services to ensure high performance, resilience, and failover capabilities. The architecture leverages EC2 instances, load balancing (ALB), auto-scaling, S3 for media storage, CloudFront for CDN, DynamoDB for user data, and MySQL for structured data in a private subnet. Additionally, a failover scenario is implemented to enhance reliability.
+# 🚀 BlogDjango
 
-## 🏗 Architectural Components
+## 📘 Description
 
-### 1️⃣ VPC (Virtual Private Cloud)
-   - 🏢 An **isolated network environment** with private and public subnets.
-
-### 2️⃣ Subnets
-   - 🔒 **Private subnets**: Used for the **blog web page** and **MySQL database**.
-   - 🌍 **Public subnets**: Used for the **NAT instance** and **load balancer (ALB)**.
-
-### 3️⃣ NAT Instance
-   - 🔄 Enables **internet access** for private subnet servers while **maintaining security**.
-
-### 4️⃣ Load Balancer (ALB - Application Load Balancer)
-   - ⚖️ **Distributes traffic** among **scalable web servers**.
-
-### 5️⃣ Auto Scaling Group
-   - 📈 **Automatically scales** web servers based on **traffic demand**.
-
-### 6️⃣ S3 Buckets
-   - 🖼 Stores **images and videos** for the blog web page.
-   - 📂 A separate **S3 bucket** is available for **failover scenarios**.
-
-### 7️⃣ CloudFront
-   - 🚀 A **content delivery network (CDN)** that accelerates the **delivery of static content**.
-
-### 8️⃣ Route 53
-   - 🌎 Manages **DNS** and **domain routing**.
-
-### 9️⃣ VPC Endpoints
-   - 🔐 Provides **secure connectivity** to AWS services.
-
-### 🔟 DynamoDB
-   - ⚡️ A **fast and scalable NoSQL database** for the blog application.
-
-### 1️⃣1️⃣ Lambda Functions (With S3 Role)
-   - 🤖 Used for **automated workflows** and **serverless computing**.
+This project aims to deploy a blog application written with the Django Framework on AWS Cloud Infrastructure. The architecture includes an Application Load Balancer with an Auto Scaling Group of EC2 Instances and a Relational Database Service (RDS) within a defined VPC. 🌐 CloudFront and Route 53 services are positioned in front of the architecture to securely manage traffic. Users can upload pictures and videos to their blog pages, which are stored in an S3 Bucket. 🗂️
 
 ---
 
-## 🔧 Requirements
+## ❓ Problem Statement
 
-To deploy this project, you need the following:
-
-- ✅ **AWS Account**
-- ✅ **AWS CLI** (To manage AWS services via the command line)
-- ✅ **Terraform or AWS CloudFormation** (To manage infrastructure as code)
-- ✅ **Bash or PowerShell** (To execute commands)
-- ✅ **MySQL Database** (Amazon RDS or manually installed on EC2)
+- 🏗️ A blog application has been developed to be hosted within an isolated VPC environment. Once the application is completed, it needs to be deployed to a production-grade AWS infrastructure.
+- 📂 The application allows users to create blog posts. User data is stored in an RDS (MySQL) database, while media files are uploaded to S3 and tracked using DynamoDB.
+- 🌍 The web application must be securely accessible via browser.
+- 🔁 The project files are pushed to GitHub and pulled into AWS instances for deployment.
 
 ---
 
-💡 **Note**: Ensure that you have the necessary **IAM roles and permissions** configured before deployment!
+## 🛠️ Project Tasks
+
+### ⚙️ Infrastructure Setup
+
+1. **🌐 Create VPC and All Components**
+   - Create VPC
+   - Create Subnets
+   - Attach Internet Gateway
+   - Set Route Tables
+   - Create Endpoint
+
+2. **🔐 Configure Security Groups (ALB → EC2 → RDS)**
+   - ALB Security Group
+   - EC2 Security Group
+   - RDS Security Group
+   - NAT Instance Security Group
+
+3. **🗄️ Set Up RDS**
+   - Subnet Group for VPC
+   - MySQL database (v8.0.35)
+
+4. **🪣 Set Up Two S3 Buckets**
+   - One for static website
+   - One for media upload
+
+### 🚀 Application Deployment
+
+5. 📥 Clone or download application files from the repository  
+6. 🧑‍💻 Set up your own GitHub repository  
+7. 📋 Create User Data for the Launch Template  
+8. 🔗 Add RDS endpoint and S3 bucket name to Django settings, push to GitHub  
+9. 🚪 Launch NAT Instance in public subnet  
+10. 🛠️ Create Launch Template and IAM Role  
+11. 🔒 Create SSL Certificate  
+12. 🎯 Create ALB and Target Group  
+13. 🔄 Create Auto Scaling Group  
+14. 🌐 Set up CloudFront in front of ALB  
+15. 🧭 Configure Route 53 with failover settings  
+16. 🧾 Create DynamoDB Table  
+17. 🧠 Create Lambda Function  
+18. ⚡ Configure S3 Event trigger for Lambda  
+
+---
+
+## 🖥️ Server Specifications
+
+- **Operating System**: Ubuntu Server 22.04
+
+---
+
+## 🗂️ Project Folder Structure
+
+```text
+BlogDjango/
+├── src/                  # Django application code
+├── requirements.txt      # Python dependencies
+├── lambda_function.py    # AWS Lambda handler
+└── developer_notes.txt   # Notes and credentials
+```
+
+---
+
+## ✅ Result
+
+This project demonstrates a complete AWS deployment of a Django-based blog application. It includes a secure, scalable infrastructure with S3 for media storage, RDS for relational data, and integrated services such as CloudFront, Route 53, Lambda, and DynamoDB for event-based logging and traffic handling.
