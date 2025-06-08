@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-
-![AWS Thema Project Diagram](./AWS-thema-Project.png)
-
-# 🌐 AWS Blog Web Page Infrastructure 🚀
-=======
->>>>>>> fadb154 (update Project files)
 
 ![AWS Project Architecture](AWS-thema-Project.png)
 
